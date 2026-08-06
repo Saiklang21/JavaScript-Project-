@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทีมของเรา — PICA STUDIO</title>
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <div id="ruler">
+        <div id="ruler-ticks"><div id="ruler-pos"></div></div>
+        <div id="ruler-label" class="mono">000p / 000p</div>
+    </div>
+
+    <header>
+        <div class="wrap nav-row">
+            <a href="../home/home.html" style="text-decoration:none;color:inherit;"><div class="logo">PICA<sup>STUDIO</sup></div></a>
+            <nav>
+                <ul>
+                    <li><a href="../home/home.html#services">บริการ</a></li>
+                    <li><a href="../home/home.html#work">ผลงาน</a></li>
+                    <li><a href="profile.html">ทีมของเรา</a></li>
+                    <li><a href="../home/home.html#contact">ติดต่อ</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-fill" href="home.html#contact">คุยงานกับเรา</a>
+        </div>
+    </header>
+
+    <section class="page-head">
+        <div class="wrap">
+            <div class="eyebrow">TEAM — PICA STUDIO</div>
+            <h1>ทีมที่อยู่เบื้องหลังทุกงานของเรา</h1>
+            <p class="sub">เราคือทีมเล็กสามคนที่แบ่งบทบาทกันชัดเจน ตั้งแต่วางแผนโปรเจกต์ ออกแบบระบบ ไปจนถึงพัฒนาหน้าเว็บจริง
+                กดที่การ์ดแต่ละคนเพื่อดู portfolio และผลงานส่วนตัวของแต่ละคนเพิ่มเติม</p>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>สมาชิกในทีม</h2>
+                <div class="section-num mono">SEC. 01 — TEAM MEMBERS</div>
+            </div>
+
+            <div class="team-grid">
+
+                <a class="team-card" href="../portfolio-1/index.html">
+                    <div class="team-photo">
+                        <!-- แทนที่ src ด้วยรูปจริง เช่น <img src="images/member1.jpg" alt="ชื่อสมาชิก 1"> -->
+                        <span class="avatar-fallback">A</span>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-role-code">PM · 01</div>
+                        <div class="team-name">ชื่อสมาชิกคนที่ 1</div>
+                        <div class="team-role">Project Manager / Product Owner</div>
+                        <p class="team-blurb">วางแผนโปรเจกต์ กำหนดขอบเขตงาน และประสานงานระหว่างทีมกับลูกค้า</p>
+                        <div class="team-link-cta">ดู PORTFOLIO →</div>
+                    </div>
+                </a>
+
+                <a class="team-card" href="../portfolio-2/index.html">
+                    <div class="team-photo">
+                        <span class="avatar-fallback">B</span>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-role-code">SA · 02</div>
+                        <div class="team-name">ชื่อสมาชิกคนที่ 2</div>
+                        <div class="team-role">System Analyst / UX Designer</div>
+                        <p class="team-blurb">วิเคราะห์ระบบ ออกแบบโครงสร้างข้อมูล และวางไวร์เฟรมก่อนเข้าสู่การพัฒนา</p>
+                        <div class="team-link-cta">ดู PORTFOLIO →</div>
+                    </div>
+                </a>
+
+                <a class="team-card" href="../portfolio-3/index.html">
+                    <div class="team-photo">
+                        <span class="avatar-fallback">C</span>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-role-code">DEV · 03</div>
+                        <div class="team-name">ชื่อสมาชิกคนที่ 3</div>
+                        <div class="team-role">Front-end Developer</div>
+                        <p class="team-blurb">พัฒนาเว็บไซต์จริงให้ตรงกับดีไซน์ ดูแลโค้ดและความเข้ากันได้ทุกอุปกรณ์</p>
+                        <div class="team-link-cta">ดู PORTFOLIO →</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap foot-row">
+            <span>© 2026 PICA STUDIO</span>
+            <span>SCALE 1:1 — NOT TO SCALE FOR PRODUCTION</span>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var pos = document.getElementById('ruler-pos'), label = document.getElementById('ruler-label');
+            function pad(n) { return String(Math.round(n)).padStart(3, '0'); }
+            function updateRuler() {
+                var doc = document.documentElement, max = Math.max(1, doc.scrollHeight - window.innerHeight), ratio = Math.min(1, window.scrollY / max);
+                var totalPicas = Math.round(doc.scrollHeight / 4), currentPicas = Math.round(ratio * totalPicas);
+                pos.style.left = (ratio * 100) + '%';
+                label.textContent = pad(currentPicas) + 'p / ' + pad(totalPicas) + 'p';
+            }
+            window.addEventListener('scroll', updateRuler, { passive: true });
+            window.addEventListener('resize', updateRuler);
+            updateRuler();
+        })();
+    </script>
+</body>
+
+</html>

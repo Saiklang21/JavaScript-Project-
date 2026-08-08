@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คุยกับแอดมิน — PICA STUDIO</title>
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+    <div id="ruler">
+        <div id="ruler-ticks"><div id="ruler-pos"></div></div>
+        <div id="ruler-label" class="mono">000p / 000p</div>
+    </div>
+
+    <header>
+        <div class="wrap nav-row">
+            <a href="../home/home.html" style="text-decoration:none;color:inherit;"><div class="logo">PICA<sup>STUDIO</sup></div></a>
+            <nav>
+                <ul>
+                    <li><a href="../home/home.html#services">บริการ</a></li>
+                    <li><a href="../home/home.html#work">ผลงาน</a></li>
+                    <li><a href="../profile/profile.html">ทีมของเรา</a></li>
+                </ul>
+            </nav>
+            <div class="status-pill mono"><span class="dot"></span>ADMIN ONLINE</div>
+        </div>
+    </header>
+
+    <section id="chat-hero">
+        <div class="wrap">
+            <div class="eyebrow">SUPPORT — LIVE CHAT</div>
+            <h1>คุยงานกับแอดมินได้ทันที</h1>
+            <p class="sub">เล่าคร่าวๆ ว่าอยากได้เว็บไซต์หรือระบบแบบไหน แอดมินของเราพร้อมตอบและนัดคุยรายละเอียดต่อกับทีมออกแบบ</p>
+        </div>
+    </section>
+
+    <section id="chat-main">
+        <div class="wrap chat-grid">
+            <aside class="admin-card">
+                <div class="admin-avatar mono">PC</div>
+                <div class="eyebrow">SUPPORT AGENT</div>
+                <h3>แอดมิน PICA Studio</h3>
+                <p class="admin-status"><span class="dot"></span>ออนไลน์ตอนนี้</p>
+                <div class="admin-meta">
+                    <div class="admin-meta-row"><div class="tb-label">Reply Time</div><div class="tb-value">&lt; 5 นาที</div></div>
+                    <div class="admin-meta-row"><div class="tb-label">Email</div><div class="tb-value">hello@pica-studio.co</div></div>
+                    <div class="admin-meta-row"><div class="tb-label">Phone</div><div class="tb-value">02-000-0000</div></div>
+                </div>
+            </aside>
+
+            <div class="specimen-frame chat-window">
+                <div class="specimen-bar">
+                    <span></span><span></span><span></span>
+                    <span class="chat-bar-label mono">CHAT — ADMIN SUPPORT · SESSION #001</span>
+                </div>
+                <div class="chat-log" id="chatLog">
+                    <div class="chat-msg admin">
+                        <div class="chat-meta mono">ADMIN · 09:14</div>
+                        <div class="chat-bubble">สวัสดีครับ ยินดีต้อนรับสู่ PICA Studio มีโปรเจกต์อะไรให้ทีมช่วยดูไหมครับ</div>
+                    </div>
+                </div>
+                <form class="chat-input-row" id="chatForm">
+                    <textarea id="chatInput" class="chat-input" placeholder="พิมพ์ข้อความถึงแอดมิน..." rows="1"></textarea>
+                    <button type="submit" class="btn btn-fill">ส่ง</button>
+                </form>
+                <div class="chat-hint mono">Enter เพื่อส่ง · Shift+Enter ขึ้นบรรทัดใหม่</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap foot-row">
+            <span>© 2026 PICA STUDIO</span>
+            <span>LIVE CHAT — SUPPORT DESK</span>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var pos = document.getElementById('ruler-pos'), label = document.getElementById('ruler-label');
+            function pad(n) { return String(Math.round(n)).padStart(3, '0'); }
+            function updateRuler() {
+                var doc = document.documentElement, max = Math.max(1, doc.scrollHeight - window.innerHeight), ratio = Math.min(1, window.scrollY / max);
+                var totalPicas = Math.round(doc.scrollHeight / 4), currentPicas = Math.round(ratio * totalPicas);
+                pos.style.left = (ratio * 100) + '%';
+                label.textContent = pad(currentPicas) + 'p / ' + pad(totalPicas) + 'p';
+            }
+            window.addEventListener('scroll', updateRuler, { passive: true });
+            window.addEventListener('resize', updateRuler);
+            updateRuler();
+        })();
+
+        (function () {
+            var form = document.getElementById('chatForm');
+            var input = document.getElementById('chatInput');
+            var log = document.getElementById('chatLog');
+
+            function pad(n) { return String(n).padStart(2, '0'); }
+            function timeNow() { var d = new Date(); return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+
+            function addMessage(sender, text) {
+                var wrap = document.createElement('div');
+                wrap.className = 'chat-msg ' + sender;
+                var meta = document.createElement('div');
+                meta.className = 'chat-meta mono';
+                meta.textContent = (sender === 'user' ? 'คุณ' : 'ADMIN') + ' · ' + timeNow();
+                var bubble = document.createElement('div');
+                bubble.className = 'chat-bubble';
+                bubble.textContent = text;
+                wrap.appendChild(meta);
+                wrap.appendChild(bubble);
+                log.appendChild(wrap);
+                log.scrollTop = log.scrollHeight;
+            }
+
+            var replies = [
+                'รับทราบครับ ขอรายละเอียดเพิ่มเติมเกี่ยวกับโปรเจกต์ได้ไหมครับ',
+                'พอจะบอกงบประมาณและกำหนดส่งงานคร่าวๆ ได้ไหมครับ',
+                'เดี๋ยวทีมออกแบบจะติดต่อกลับไปภายใน 5 นาทีนะครับ',
+                'ขอบคุณสำหรับข้อมูลครับ กำลังส่งต่อให้ทีมดูครับ'
+            ];
+            var replyIndex = 0;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var text = input.value.trim();
+                if (!text) return;
+                addMessage('user', text);
+                input.value = '';
+                input.style.height = 'auto';
+                setTimeout(function () {
+                    addMessage('admin', replies[replyIndex % replies.length]);
+                    replyIndex++;
+                }, 900);
+            });
+
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    form.requestSubmit();
+                }
+            });
+
+            input.addEventListener('input', function () {
+                input.style.height = 'auto';
+                input.style.height = Math.min(input.scrollHeight, 140) + 'px';
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -54,7 +54,7 @@ h1.headline em { font-style: normal; color: var(--accent); }
 .cta-row { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
 .specimen-frame { background: var(--panel); border: 1px solid var(--line-strong); padding: 10px 10px 16px; }
 .specimen-bar { display: flex; gap: 6px; padding: 0 4px 10px; border-bottom: 1px solid var(--line); margin-bottom: 10px; }
-.specimen-bar span { width: 9px; height: 9px; border-radius: 50%; background: var(--line-strong); }
+.specimen-bar span:not(.chat-bar-label) { width: 9px; height: 9px; border-radius: 50%; background: var(--line-strong); }
 canvas { display: block; width: 100%; height: auto; }
 .specimen-cap { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: .68rem; color: var(--muted); padding: 8px 4px 0; font-variant-numeric: tabular-nums; }
 

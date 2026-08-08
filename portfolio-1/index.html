@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPAVIT — Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="tabbar" role="tablist" aria-label="ส่วนของพอร์ตโฟลิโอ">
+        <button class="tab active" role="tab" aria-selected="true" data-page="home"><span class="dot"></span>home</button>
+        <button class="tab" role="tab" aria-selected="false" data-page="history"><span class="dot"></span>experience</button>
+        <button class="tab" role="tab" aria-selected="false" data-page="works"><span class="dot"></span>works</button>
+    </nav>
+
+    <main class="wrap">
+
+        <section id="home" class="page active">
+            <div class="hero">
+                <p class="eyebrow">// portfolio</p>
+                <div class="frame">
+                    <span class="c2"></span>
+                    <span class="c3"></span>
+                    <h1 class="name">SUPAVIT</h1>
+                    <p class="role">frontend developer &amp; ui/ux designer</p>
+                </div>
+                <p class="bio">ผมสนใจในสายงานของ frontend และ UI ผมชอบที่จะได้ออกแบบเว็ปไซต์ และ เห็นเว็ปพัฒนาต่อไปเรื่อยๆ
+                    โดยมีพื้นฐาน Html , Css และ JavaScript ในโปรเจกต์กลุ่มและงานแข่งต่างๆ</p>
+
+                <div class="chips">
+                    <span class="chip">Html</span>
+                    <span class="chip">Css</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">NestJS</span>
+                    <span class="chip">PostgreSQL / Supabase</span>
+                    <span class="chip">JWT</span>
+                </div>
+                <div class="chips">
+                    <span class="chip">การทำงานรวมกันเป็นทีม</span>
+                    <span class="chip">การแก้ปัญหาเฉพาะหน้า</span>
+                    <span class="chip">การสื่อสารกับทีม</span>
+                </div>
+
+                <div class="cta-row">
+                    <button class="btn btn-fill" data-goto="history">ดูประสบการณ์</button>
+                    <button class="btn" data-goto="works">ดูผลงาน</button>
+                </div>
+
+                <div class="contact-row">
+                    <a href="mailto:oopp89038@example.com">oopp89038@example.com</a>
+                    <a href="https://github.com/Ppggez" target="_blank" rel="noopener">github.com/Ppggez</a>
+                    <a href="tel:0987506133">098-750-6133</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="page">
+            <div class="section-head">
+                <h2>ประวัติและประสบการณ์</h2>
+                <div class="section-num mono">SEC. 01 — EXPERIENCE</div>
+            </div>
+
+            <div class="timeline">
+                <div class="t-item">
+                    <p class="t-title">BBPM — Sanpakwan Smart Rehab Center</p>
+                    <p class="t-desc">ระบบจัดการผู้ป่วยและการรักษา พัฒนา backend ด้วย NestJS เชื่อมต่อ PostgreSQL บน Supabase
+                        พร้อมเข้ารหัสข้อมูลด้วย AES-256 และยืนยันตัวตนด้วย JWT เเละการเก็บข้อมูลผู้ป่วยให้มีความปลอดภัยสูงที่สุดด้วยการใช้Database
+                        เเละ การ Hashรหัสผ่าน</p>
+                    <div class="t-tags"><span>NestJS</span><span>Supabase</span><span>PostgreSQL</span><span>JWT</span><span>AES-256</span></div>
+                </div>
+
+                <div class="t-item">
+                    <p class="t-title">Ban Mae Hoi Ngoen School project</p>
+                    <p class="t-desc">แพลตฟอร์มจำลองการขายของให้กับนักเรียนช่วยให้นักเรียนได้เรียนรู้การใช้เทคโนโลยีและลดความผิดพลาดในงานบัญชีและการจัดการสินค้าผมได้รับหน้าที่ในการทำ
+                        Frontend และ Ui design เป้นโปรเจคเเรกที่ผมได้ทดลองทำ เเละได้เรียนรู้การใช้งานภาษา Html , Css ,
+                        JavaScript และการทำงานร่วมกันเป็นทีม</p>
+                    <div class="t-tags"><span>Html</span><span>Css</span><span>JavaScript</span><span>UI design</span></div>
+                </div>
+
+                <div class="t-item">
+                    <p class="t-title">ProjectWebtech</p>
+                    <p class="t-desc">ได้ทำงานเป็นหลังบ้านเเละการเชื่อมต่อ Api ระบบจองและจัดการคอร์สเรียน พัฒนาด้วย Node.js
+                        และ Express และ SQLite ซึ่งเชื่อมหน้าเว็บกับข้อมูลจริงผ่าน fetch()</p>
+                    <div class="t-tags"><span>Node.js</span><span>Express</span><span>SQLite</span><span>REST API</span></div>
+                </div>
+
+                <div class="t-item">
+                    <p class="t-title">Lampang City Municipality Kad Kong Ta</p>
+                    <p class="t-desc">ผมได้มีโอกาศไปพุดคุยกับเทศบาลนครลำปางในส่วนงานของกาดกองต้าและได้เก็บข้อมูลมาเพื่อออกแบบเเละเเก้ปัญหา
+                        การวิเคราะห์คนในพื้นที่กาดกองต้า เเละได้นำข้อมูลมาสร้างเว็ปเเละออกแบบเเดชบอร์ดเพื่อให้เทศบาลสามารถดูได้ง่ายมากขึ้น</p>
+                    <div class="t-tags"><span>Figma</span><span>UI design</span></div>
+                </div>
+
+                <div class="t-item">
+                    <p class="t-title">UXUI design workshop By Tcc</p>
+                    <p class="t-desc">ผมได้เข้าร่วม Workshop ออกแบบ UI/UX ที่จัดโดย Tcc ซึ่งให้ความรู้เกี่ยวกับการใช้ Figma
+                        ในการออกแบบและสร้าง prototype เเละสอนการคิดเผื่อเข้าใจ User ละการเก็บข้อมูลที่ User ต้องการจริงๆ</p>
+                    <div class="t-tags"><span>Figma</span><span>UI/UX</span><span>Hackathon</span></div>
+                </div>
+
+                <div class="t-item">
+                    <p class="t-title">Dashboard Design workshop</p>
+                    <p class="t-desc">ผมได้เข้าร่วม Workshop ออกแบบ Dashboard ที่จัดโดยบริษัท ZyGen ซึ่งให้ความรู้เกี่ยวกับการออกแบบหน้าแดชบอร์ดที่ทำให้ผู้ใช้ดูง่ายอ่านง่ายเเละสะดวกมากขึ้น</p>
+                    <div class="t-tags"><span>Figma</span><span>Dashboard design</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="page">
+            <div class="section-head">
+                <h2>ผลงาน</h2>
+                <div class="section-num mono">SEC. 02 — WORKS</div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <span class="eyebrow">Hylifegroub hackathon 2025</span>
+                    <p>กิจกรรม Hackathon แข่งขันพัฒนาไอเดียด้านเทคโนโลยีด้านการเงิน นำเสนอแอพจดรายรับรายจ่ายอัจฉริยะโดยใช้
+                        AI ซึ่งได้รับรางวัลอันดับ 3 มาครับ</p>
+                    <div class="t-tags"><span>Ui design</span><span>web app</span><span>AI</span></div>
+                </div>
+
+                <div class="card">
+                    <span class="eyebrow">AI solution</span>
+                    <p>โครงการพัฒนา AI Solution สำหรับเมืองเชียงใหม่ โดยร่วมแข่งขันและผ่านการอบรมจริงจากผู้เชี่ยวชาญ
+                        พร้อมพัฒนา Prototype ที่สามารถต่อยอดใช้งานในอุตสาหกรรมได้จริง</p>
+                    <div class="t-tags"><span>Solution</span><span>การทำงานร่วมกันเป็นทีม</span><span>การสื่อสารระหว่างทีม</span></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrap foot-row">
+            <span>© 2026 SUPAVIT</span>
+            <span class="mono">FRONTEND DEVELOPER &amp; UI/UX DESIGNER</span>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
